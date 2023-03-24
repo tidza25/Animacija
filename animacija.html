@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Animacija </title>
+
+        <style>
+            body {
+                background: black;
+                width: 700px;
+                height: 700px;
+            }
+
+            .circle {
+                position: absolute;
+                bottom: 213px;
+                width: 250px;
+                height: 250px;
+
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+
+                border: 0px solid ;  
+                border-radius: 100%;
+                background: linear-gradient(rgb(247, 83, 110), rgb(129, 224, 129), rgb(103, 64, 182));
+                animation-name: circle1;
+                animation-duration: 0.2s;
+                animation-iteration-count: infinite;  
+
+            }
+
+            .circle::before {
+                position: absolute;
+                content: " ";
+                bottom: 200px;
+                width: 290px;
+                height: 290px;
+
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+
+                border: 0px solid ;  
+                border-radius: 100%;
+                background: linear-gradient(rgb(232, 72, 99), rgb(117, 219, 117), rgb(92, 51, 175));
+                transform: translate(-17px, 220px);
+                
+                filter:blur(35px);   
+            }
+
+            @keyframes circle1 {
+                from{
+                    transform: rotate3d(0, 0, 1, 0deg);
+                
+                }
+                to {
+                    transform: rotate3d(0, 0, 1, 360deg);
+                }
+            }    
+
+            
+
+            .border-circle {
+                position: absolute;
+                top: 265px;
+                bottom: 20px;
+                width: 220px;
+                height: 220px;
+
+                margin: 0 auto;
+                left: 0;
+                right: 0;
+
+                border: 0.2px solid ;  
+                border-radius: 100%;
+                background: black;
+            }
+
+
+            .border-circle::before {
+                position: absolute;
+                content: " ";
+                top: 110px;
+                left: 110px;
+                
+                transform: scale(1, 1);
+                transform-origin: 52.5% 52.5%;
+               
+                border: 5px solid rgb(8, 3, 14);  
+                border-radius: 100%;
+                
+                animation: circle2;
+                animation-duration:2s;
+                animation-iteration-count: infinite;
+                animation-direction: normal; 
+            }
+               
+            
+
+
+            @keyframes circle2 {
+                from{
+                    transform: scale3d(1,1,0)
+                }
+
+                to{
+                    transform: scale3d(20,20,10)
+                
+                }
+
+                }   
+        </style>
+    </head>
+
+    <body>
+
+        <div class="circle"></div>
+        <div class="border-circle"></div>
+        
+
+
+    </body>
+
+
+</html>
